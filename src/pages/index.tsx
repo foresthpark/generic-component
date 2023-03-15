@@ -1,15 +1,9 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import List from "~/components/List";
 
 export interface Name {
   firstName: string;
   lastName: string;
-}
-
-export interface Address {
-  street: string;
-  city: string;
 }
 
 const Home: NextPage = () => {
@@ -17,21 +11,6 @@ const Home: NextPage = () => {
     { firstName: "John", lastName: "Doe" },
     { firstName: "Jane", lastName: "Dawson" },
     { firstName: "Jack", lastName: "Bean" },
-  ];
-
-  const addressData: Address[] = [
-    {
-      street: "123 Main St",
-      city: "Edmonton",
-    },
-    {
-      street: "456 Main St",
-      city: "Calgary",
-    },
-    {
-      street: "789 Main St",
-      city: "Toronto",
-    },
   ];
 
   return (
@@ -45,31 +24,14 @@ const Home: NextPage = () => {
         <span>Hello World</span>
         <ul>
           {nameData.map((name) => (
-            <List<Name>
-              key={name.firstName}
-              data={name}
-              render={(name) => (
-                <span>
-                  {name.firstName} - {name.lastName}
-                </span>
-              )}
-            />
+            <li className="list-disc" key={name.firstName}>
+              <span>
+                {name.firstName} - {name.lastName}
+              </span>
+            </li>
           ))}
         </ul>
         <br />
-        <ul>
-          {addressData.map((address) => (
-            <List<Address>
-              key={address.city}
-              data={address}
-              render={(address) => (
-                <span>
-                  {address.city} - {address.street}
-                </span>
-              )}
-            />
-          ))}
-        </ul>
       </div>
     </>
   );
