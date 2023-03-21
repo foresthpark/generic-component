@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import { addressData } from "~/constants/data";
 
 export interface Name {
   firstName: string;
@@ -27,6 +28,16 @@ const Home: NextPage = () => {
             <li className="list-disc" key={name.firstName}>
               <span>
                 {name.firstName} - {name.lastName}
+              </span>
+            </li>
+          ))}
+        </ul>
+        -----------------------------------------------
+        <ul>
+          {addressData.map((address) => (
+            <li className="list-disc" key={address.city}>
+              <span>
+                {address.street} - {address.city}
               </span>
             </li>
           ))}
