@@ -38,5 +38,11 @@ export default function AboutPage() {
                ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀    ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀            ▀            ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀ 
                                                                                                                                                              
 `;
-  return <div className="text-left">{name}</div>;
+  return (
+    <div
+      style={{ lineHeight: "normal" }}
+      className="whitespace-pre-wrap"
+      dangerouslySetInnerHTML={{ __html: name }}
+    />
+  );
 }
