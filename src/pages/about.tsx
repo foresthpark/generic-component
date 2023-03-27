@@ -41,7 +41,7 @@ export default function AboutPage() {
   return (
     <div
       style={{ lineHeight: "normal" }}
-      className="whitespace-pre-wrap"
+      className="h-screen whitespace-pre-wrap bg-gray-900 text-gray-300"
       dangerouslySetInnerHTML={{ __html: name }}
     />
   );
