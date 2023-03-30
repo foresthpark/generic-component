@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex h-screen flex-col items-center justify-center text-xl">
-        <span>Hello World</span>
+        <span>Hello Sekai</span>
         <ul>
           {nameData.map((name) => (
             <li className="list-disc" key={name.firstName}>
