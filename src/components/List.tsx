@@ -1,3 +1,7 @@
 export default function List() {
-  return <div>List</div>;
+  return (
+    <li className="list-disc">
+      <span>Hello Sekia</span>
+    </li>
+  );
 }

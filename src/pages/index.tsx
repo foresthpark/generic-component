@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import ListExample from "~/components/ListExample";
 import { addressData } from "~/constants/data";
 
 export interface Name {
@@ -25,21 +26,13 @@ const Home: NextPage = () => {
         <span>Hello Sekai</span>
         <ul>
           {nameData.map((name) => (
-            <li className="list-disc" key={name.firstName}>
-              <span>
-                {name.firstName} - {name.lastName}
-              </span>
-            </li>
+            <ListExample data={name} key={name.firstName} />
           ))}
         </ul>
         -----------------------------------------------
         <ul>
           {addressData.map((address) => (
-            <li className="list-disc" key={address.city}>
-              <span>
-                {address.street} - {address.city}
-              </span>
-            </li>
+            <ListExample data={address} key={address.city} />
           ))}
         </ul>
         <br />

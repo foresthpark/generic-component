@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function AboutPage() {
@@ -36,13 +37,23 @@ export default function AboutPage() {
               ▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌ ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄      ▐░▌          ▐░▌          ▐░█▄▄▄▄▄▄▄█░▌▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌       ▐░▌
               ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌▐░░░░░░░░░░░▌     ▐░▌          ▐░▌          ▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌
                ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀    ▀  ▀▀▀▀▀▀▀▀▀▀▀       ▀            ▀            ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀ 
-                                                                                                                                                             
+                       
+               
+                                                                                                                      ███╗   ██╗███████╗██╗  ██╗████████╗    ██╗ ██╗  
+                                                                                                                      ████╗  ██║██╔════╝╚██╗██╔╝╚══██╔══╝    ╚██╗╚██╗ 
+                                                                                                                      ██╔██╗ ██║█████╗   ╚███╔╝    ██║        ╚██╗╚██╗
+                                                                                                                      ██║╚██╗██║██╔══╝   ██╔██╗    ██║        ██╔╝██╔╝
+                                                                                                                      ██║ ╚████║███████╗██╔╝ ██╗   ██║       ██╔╝██╔╝ 
+                                                                                                                      ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝   ╚═╝       ╚═╝ ╚═╝  
+                                                               
 `;
   return (
-    <div
-      style={{ lineHeight: "normal" }}
-      className="h-screen whitespace-pre-wrap bg-gray-900 text-gray-300"
-      dangerouslySetInnerHTML={{ __html: name }}
-    />
+    <Link href="/about2">
+      <div
+        style={{ lineHeight: "normal" }}
+        className="h-screen whitespace-pre-wrap bg-gray-900 text-gray-300"
+        dangerouslySetInnerHTML={{ __html: name }}
+      />
+    </Link>
   );
 }
