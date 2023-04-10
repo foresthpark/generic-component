@@ -1,9 +1,8 @@
 import React from "react";
-import { type Address } from "~/constants/data";
-import { type Name } from "~/pages";
+import { type Person, type Dessert } from "~/constants/data";
 
 interface ListExampleProps {
-  data: Name | Address;
+  data: Person | Dessert;
 }
 
 export default function ListExample({ data }: ListExampleProps) {
@@ -11,16 +10,17 @@ export default function ListExample({ data }: ListExampleProps) {
     return (
       <li className="list-disc" key={data.firstName}>
         <span>
-          {data.firstName} - {data.lastName}
+          {data.firstName} - {data.lastName} - {data.age}yo - {data.visits}{" "}
+          visits
         </span>
       </li>
     );
   }
 
-  if ("street" in data && "city" in data) {
+  if ("name" in data && "calories" in data) {
     return (
-      <li className="list-disc" key={data.city}>
-        <span>{`${data.street} /// ${data.city}`}</span>
+      <li className="list-disc" key={data.name}>
+        <span>{`${data.name} - ${data.calories}kCal - ${data.sweetness}/100 sweet - ${data.popularity}/10 popularity`}</span>
       </li>
     );
   }

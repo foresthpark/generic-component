@@ -47,12 +47,36 @@ export default function AboutPage() {
 
 `;
   return (
-    <Link href="/">
-      <div
-        style={{ lineHeight: "normal" }}
-        className="h-screen whitespace-pre-wrap bg-gray-900 text-gray-300"
-        dangerouslySetInnerHTML={{ __html: name }}
-      />
-    </Link>
+    <div className="h-screen bg-white font-sans ">
+      <div className="flex h-full flex-col items-center justify-center">
+        <div className="mx-auto max-w-5xl text-center">
+          <h1 className="text-4xl font-bold text-gray-900 sm:text-6xl">
+            Generic Typescript Components
+          </h1>
+          <p className="mt-6 text-4xl leading-8 text-gray-500">
+            One componenet to rule them all
+          </p>
+          <p className="mt-6 text-2xl leading-8 text-gray-500">
+            Creating a generic pure component in React to increase reusability,
+            improving type safety, and easier maintenance
+          </p>
+          <div className="mt-10 flex items-center justify-center gap-x-6">
+            <Link
+              href="/table1"
+              className="text-base font-semibold leading-6 text-gray-900"
+            >
+              Start <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+    //   <Link href="/">
+    //     <div
+    //       style={{ lineHeight: "normal" }}
+    //       className="h-screen whitespace-pre-wrap bg-white text-gray-900"
+    //       dangerouslySetInnerHTML={{ __html: name }}
+    //     />
+    //   </Link>
   );
 }

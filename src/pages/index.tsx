@@ -1,20 +1,9 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import ListExample from "~/components/ListExample";
-import { addressData } from "~/constants/data";
-
-export interface Name {
-  firstName: string;
-  lastName: string;
-}
+import { dessertData, personData } from "~/constants/data";
 
 const Home: NextPage = () => {
-  const nameData: Name[] = [
-    { firstName: "John", lastName: "Doe" },
-    { firstName: "Jane", lastName: "Dawson" },
-    { firstName: "Jack", lastName: "Bean" },
-  ];
-
   return (
     <>
       <Head>
@@ -25,14 +14,14 @@ const Home: NextPage = () => {
       <div className="flex h-screen flex-col items-center justify-center text-xl">
         <span>Hello Sekai</span>
         <ul>
-          {nameData.map((name) => (
+          {personData.map((name) => (
             <ListExample data={name} key={name.firstName} />
           ))}
         </ul>
         -----------------------------------------------
         <ul>
-          {addressData.map((address) => (
-            <ListExample data={address} key={address.city} />
+          {dessertData.map((dessert) => (
+            <ListExample data={dessert} key={dessert.name} />
           ))}
         </ul>
         <br />
