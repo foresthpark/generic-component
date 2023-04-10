@@ -80,7 +80,7 @@ export default function AboutPage() {
               className="flex flex-col gap-10 pt-12 sm:flex-row"
             >
               <img
-                className="aspect-[4/5] w-[450px] flex-none rounded-2xl object-cover"
+                className="aspect-[4/5] max-w-xs flex-none rounded-2xl object-cover"
                 src={person.imageUrl}
                 alt=""
               />

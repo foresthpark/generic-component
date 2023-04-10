@@ -47,7 +47,7 @@ export default function AboutPage() {
 
 `;
   return (
-    <div className="h-screen bg-white font-sans ">
+    <div className="h-screen bg-white p-10 font-sans ">
       <div className="flex h-full flex-col items-center justify-center">
         <div className="mx-auto max-w-5xl text-center">
           <h1 className="text-4xl font-bold text-gray-900 sm:text-6xl">
@@ -58,7 +58,7 @@ export default function AboutPage() {
           </p>
           <p className="mt-6 text-2xl leading-8 text-gray-500">
             Creating a generic pure component in React to increase reusability,
-            improving type safety, and easier maintenance
+            improve type safety, and maintain easily.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
