@@ -5,6 +5,13 @@ export type Person = {
   visits: number;
 };
 
+export type Dessert = {
+  name: string;
+  calories: number;
+  sweetness: number;
+  popularity: number;
+};
+
 export const personData: Person[] = [
   {
     firstName: "Forest",
@@ -25,13 +32,6 @@ export const personData: Person[] = [
     visits: 20,
   },
 ];
-
-export type Dessert = {
-  name: string;
-  calories: number;
-  sweetness: number;
-  popularity: number;
-};
 
 export const dessertData: Dessert[] = [
   {
