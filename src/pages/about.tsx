@@ -52,7 +52,7 @@ export default function AboutPage() {
     {
       name: "Forest Park",
       role: "Chief Procrastination Officer",
-      company: "Rocket Punch",
+      company: "Rocket Punch 🚀👊",
       imageUrl: "https://coffee.forestp.dev/images/image.png",
       bio: `"I watch cat videos all day"`,
       twitterUrl: "#",
