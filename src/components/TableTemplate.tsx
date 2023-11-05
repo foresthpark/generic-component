@@ -51,7 +51,7 @@ export default function TableTemplate<T extends object>({
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="border-b-2 border-r-2 border-gray-900 px-4 py-2 px-2 py-4 text-4xl"
+                  className="border-b-2 border-r-2 border-gray-900 px-4 py-2 text-4xl"
                 >
                   {header.isPlaceholder
                     ? null
