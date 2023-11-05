@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   createColumnHelper,
   flexRender,
@@ -24,7 +25,7 @@ export default function TableTemplate<T extends object>({
   const columns = useMemo(
     () =>
       genericKeys.map((key) => {
-        return columnHelper.accessor((row: T) => row[key], {
+        return columnHelper.accessor(() => key, {
           id: key as string,
           cell: (info) => info.getValue(),
           header: () => key,
@@ -43,7 +44,7 @@ export default function TableTemplate<T extends object>({
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-4 p-2">
-      <img src="/person.png" className="h-[300px]" />
+      <img src="/person.png" className="h-[300px]" alt="" />
       <table className="border-2 border-gray-900">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
