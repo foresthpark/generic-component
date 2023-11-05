@@ -1,12 +1,4 @@
 import TableTemplate from "~/components/TableTemplate";
-import {
-  ColumnDef,
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import { useMemo } from "react";
 
 type Person = {
   firstName: string;
