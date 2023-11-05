@@ -42,7 +42,7 @@ export default function TableTemplate({ defaultData }: TableTemplateProps) {
     }),
   ];
 
-  const [data, setData] = React.useState(() => [...defaultData]);
+  const [data] = React.useState(() => [...defaultData]);
   const table = useReactTable({
     data,
     columns,
