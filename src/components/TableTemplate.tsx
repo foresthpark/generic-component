@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
   createColumnHelper,
   flexRender,
@@ -6,42 +7,15 @@ import {
 } from "@tanstack/react-table";
 import React from "react";
 
-type Person = {
-  firstName: string;
-  lastName: string;
-  age: number;
-  visits: number;
-};
-
-interface TableTemplateProps {
-  defaultData: Person[];
+interface TableTemplateProps<T> {
+  defaultData: T[];
+  columns: any;
 }
 
-export default function TableTemplate({ defaultData }: TableTemplateProps) {
-  const columnHelper = createColumnHelper<Person>();
-  const columns = [
-    columnHelper.accessor("firstName", {
-      cell: (info) => info.getValue(),
-      header: () => "First Name",
-      footer: (info) => info.column.id,
-    }),
-    columnHelper.accessor((row) => row.lastName, {
-      id: "lastName",
-      cell: (info) => <i>{info.getValue()}</i>,
-      header: () => <span>Last Name</span>,
-      footer: (info) => info.column.id,
-    }),
-    columnHelper.accessor("age", {
-      header: () => "Age",
-      cell: (info) => info.renderValue(),
-      footer: (info) => info.column.id,
-    }),
-    columnHelper.accessor("visits", {
-      header: () => <span>Visits</span>,
-      footer: (info) => info.column.id,
-    }),
-  ];
-
+export default function TableTemplate<T>({
+  defaultData,
+  columns,
+}: TableTemplateProps<T>) {
   const [data] = React.useState(() => [...defaultData]);
   const table = useReactTable({
     data,
