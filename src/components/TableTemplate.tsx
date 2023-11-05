@@ -27,7 +27,7 @@ export default function TableTemplate<T extends object>({
   const columns = useMemo(
     () =>
       genericKeys.map((key) => {
-        return columnHelper.accessor(() => key, {
+        return columnHelper.accessor((row: T) => row[key], {
           id: key as string,
           cell: (info) => info.getValue(),
           header: () => keyMap[key],
