@@ -31,7 +31,6 @@ export default function TableTemplate<T extends object>({
           id: key as string,
           cell: (info) => info.getValue(),
           header: () => keyMap[key],
-          footer: (info) => info.column.id,
         });
       }),
     [genericKeys, columnHelper, keyMap]
