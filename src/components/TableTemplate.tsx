@@ -5,17 +5,36 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import React from "react";
+import React, { useMemo } from "react";
 
 interface TableTemplateProps<T> {
   defaultData: T[];
-  columns: any;
 }
 
-export default function TableTemplate<T>({
+function getKeysOfGeneric<T extends object>(obj: T | undefined): (keyof T)[] {
+  if (!obj) return [];
+  return Object.keys(obj) as (keyof T)[];
+}
+
+export default function TableTemplate<T extends object>({
   defaultData,
-  columns,
 }: TableTemplateProps<T>) {
+  const columnHelper = createColumnHelper<T>();
+  const genericKeys = getKeysOfGeneric(defaultData[0]);
+
+  const columns = useMemo(
+    () =>
+      genericKeys.map((key) => {
+        return columnHelper.accessor((row: T) => row[key], {
+          id: key as string,
+          cell: (info) => info.getValue(),
+          header: () => key,
+          footer: (info) => info.column.id,
+        });
+      }),
+    [genericKeys, columnHelper]
+  );
+
   const [data] = React.useState(() => [...defaultData]);
   const table = useReactTable({
     data,
