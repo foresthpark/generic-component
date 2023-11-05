@@ -28,6 +28,17 @@ const defaultData: Person[] = [
   },
 ];
 
+const personKeyMap = {
+  firstName: "First Name",
+  lastName: "Last Name",
+  age: "Age",
+  visits: "Visits",
+};
+
 export default function TableDemo1() {
-  return <TableTemplate<Person> defaultData={defaultData} />;
+  return (
+    <>
+      <TableTemplate<Person> defaultData={defaultData} keyMap={personKeyMap} />
+    </>
+  );
 }

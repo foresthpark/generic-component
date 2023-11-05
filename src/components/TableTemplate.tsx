@@ -9,6 +9,7 @@ import React, { useMemo } from "react";
 
 interface TableTemplateProps<T> {
   defaultData: T[];
+  keyMap: Record<keyof T, string>;
 }
 
 function getKeysOfGeneric<T extends object>(obj: T | undefined): (keyof T)[] {
@@ -18,6 +19,7 @@ function getKeysOfGeneric<T extends object>(obj: T | undefined): (keyof T)[] {
 
 export default function TableTemplate<T extends object>({
   defaultData,
+  keyMap,
 }: TableTemplateProps<T>) {
   const columnHelper = createColumnHelper<T>();
   const genericKeys = getKeysOfGeneric(defaultData[0]);
@@ -28,11 +30,11 @@ export default function TableTemplate<T extends object>({
         return columnHelper.accessor(() => key, {
           id: key as string,
           cell: (info) => info.getValue(),
-          header: () => key,
+          header: () => keyMap[key],
           footer: (info) => info.column.id,
         });
       }),
-    [genericKeys, columnHelper]
+    [genericKeys, columnHelper, keyMap]
   );
 
   const [data] = React.useState(() => [...defaultData]);
