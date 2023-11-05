@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import BulletPoint from "~/components/BulletPoint";
 import ListExample from "~/components/ListExample";
 import { dessertData, personData } from "~/constants/data";
 
@@ -15,13 +16,31 @@ const Home: NextPage = () => {
         <span className="pb-3">Hello Sekai/世界/World/🌎</span>
         <ul>
           {personData.map((name) => (
-            <ListExample data={name} key={name.firstName} />
+            <BulletPoint
+              data={name}
+              key={name.firstName}
+              render={(name) => (
+                <span>
+                  {name.firstName} {name.lastName} - {name.age}yo /{" "}
+                  {name.visits} visits
+                </span>
+              )}
+            />
           ))}
         </ul>
         -----------------------------------------------
         <ul>
           {dessertData.map((dessert) => (
-            <ListExample data={dessert} key={dessert.name} />
+            <BulletPoint
+              data={dessert}
+              key={dessert.name}
+              render={(dessert) => (
+                <span>
+                  {dessert.name} - {dessert.calories} calories /{" "}
+                  {dessert.popularity} points
+                </span>
+              )}
+            />
           ))}
         </ul>
         <br />
