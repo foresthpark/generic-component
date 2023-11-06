@@ -11,10 +11,15 @@ export function DropdownTemplate() {
   };
 
   return (
-    <div className="border-lg select-none border-[1px] border-green-400 p-1">
+    <>
+      <label className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+        Select an option
+      </label>
       <select
+        id="countries_disabled"
+        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
         value={selectedOption as string}
-        onChange={(e) => handleOptionSelect(e.target.value)}
+        onChange={(e) => handleOptionSelect(e.target.value as T)}
       >
         <option value={selectedOption as unknown as string}>
           Select an option
@@ -25,6 +30,6 @@ export function DropdownTemplate() {
           </option>
         ))}
       </select>
-    </div>
+    </>
   );
 }
