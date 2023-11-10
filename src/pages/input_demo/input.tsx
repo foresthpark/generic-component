@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputTemplate from "~/components/InputTemplate";
+import InputTemplate from "~/components/InputTemplate.1";
 
 type UserFormData = {
   name: string;
@@ -27,7 +27,7 @@ export default function InputPage() {
       onSubmit={handleSubmit}
       className="mx-auto flex w-full max-w-2xl flex-col justify-center gap-4 p-4"
     >
-      <InputTemplate
+      <InputTemplate<UserFormData>
         name="name"
         value={formData.name}
         onChange={handleChange}
@@ -35,7 +35,7 @@ export default function InputPage() {
         placeholder="Enter your name"
         type="text"
       />
-      <InputTemplate
+      <InputTemplate<UserFormData>
         name="age"
         value={formData.age}
         onChange={handleChange}
