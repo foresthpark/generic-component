@@ -16,8 +16,7 @@ export default function InputPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
-    // Submit logic here
+    console.log("🚀 ~ formData:", formData);
   };
 
   return (
