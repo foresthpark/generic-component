@@ -23,7 +23,7 @@ export default function InputPage() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex max-w-2xl flex-col justify-center gap-4 p-4"
+      className="mx-auto flex w-full max-w-2xl flex-col justify-center gap-4 p-4"
     >
       <InputTemplate
         name="name"
