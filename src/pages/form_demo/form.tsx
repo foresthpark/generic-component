@@ -25,6 +25,7 @@ export default function FormPage() {
         <>
           <InputTemplate<UserFormData>
             name="name"
+            type="text"
             value={values.name}
             onChange={handleChange}
             label="Name"
