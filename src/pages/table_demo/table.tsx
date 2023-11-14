@@ -35,7 +35,7 @@ const personKeyMap = {
   visits: "Visits",
 };
 
-export default function TableDemo1() {
+export default function TableDemo() {
   return (
     <>
       <TableTemplate<Person> defaultData={defaultData} keyMap={personKeyMap} />
