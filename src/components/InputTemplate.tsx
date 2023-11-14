@@ -4,8 +4,8 @@ interface InputFieldProps<T> {
   name: keyof T;
   value: T[keyof T];
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  label?: string;
-  type?: React.HTMLInputTypeAttribute;
+  label: string;
+  type: React.HTMLInputTypeAttribute;
   placeholder?: string;
 }
 
