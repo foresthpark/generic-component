@@ -27,7 +27,7 @@ export default function InputStartPage() {
       onSubmit={handleSubmit}
       className="mx-auto flex w-full max-w-2xl flex-col justify-center gap-4 p-4"
     >
-      <InputStartTemplate
+      <InputStartTemplate<UserFormData>
         name="name"
         value={formData.name}
         onChange={handleChange}
@@ -35,7 +35,7 @@ export default function InputStartPage() {
         placeholder="Enter your name"
         type="text"
       />
-      <InputStartTemplate
+      <InputStartTemplate<UserFormData>
         name="age"
         value={formData.age}
         onChange={handleChange}
