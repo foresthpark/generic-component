@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputTemplate from "~/components/InputTemplate.1";
+import InputTemplate from "~/components/InputTemplate";
 
 type UserFormData = {
   name: string;
