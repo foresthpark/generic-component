@@ -28,7 +28,12 @@ const defaultData: Person[] = [
   },
 ];
 
-const personKeyMap = {
+// Map each Person key to a string label
+type PersonKeyMap = {
+  [P in keyof Person]: string;
+};
+
+const personKeyMap: PersonKeyMap = {
   firstName: "First Name",
   lastName: "Last Name",
   age: "Age",
