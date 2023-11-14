@@ -1,6 +1,6 @@
 import React from "react";
-import FormStartTemplate from "~/components/start/Form/FormStartTemplate";
+import FormStartPage from "~/components/start/Form/FormStartPage";
 
 export default function form() {
-  return <FormStartTemplate />;
+  return <FormStartPage />;
 }
