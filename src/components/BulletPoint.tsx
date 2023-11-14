@@ -1,5 +1,4 @@
 import React from "react";
-import { type Dessert, type Person } from "~/constants/data";
 
 interface BulletPointProps<T> {
   data: T;
