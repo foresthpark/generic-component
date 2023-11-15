@@ -27,10 +27,10 @@ export default function VideoOnePage() {
       </video>
       <div className="mt-10 flex items-center justify-center gap-x-6">
         <Link
-          href="/present/video2"
+          href="/"
           className="text-2xl font-semibold leading-6 text-gray-900"
         >
-          Next <span aria-hidden="true">→</span>
+          Start <span aria-hidden="true">→</span>
         </Link>
       </div>
     </div>
