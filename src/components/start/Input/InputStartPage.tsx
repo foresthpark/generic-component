@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import InputTemplate from "~/components/InputTemplate";
+import InputStartTemplate from "./InputStartTemplate";
 
 type UserFormData = {
   name: string;
   age: number;
 };
 
-export default function FormStartPage() {
+export default function InputStartPage() {
   const [formData, setFormData] = useState<UserFormData>({ name: "", age: 0 });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,9 +28,10 @@ export default function FormStartPage() {
       className="mx-auto flex w-full max-w-2xl flex-col justify-center gap-4 p-4"
     >
       <span className="pb-10">
-        Filename: <code>FormStartPage.tsx</code>
+        Filename: <code>InputStartTemplate.tsx</code> &&{" "}
+        <code>InputStartPage.tsx</code>
       </span>
-      <InputTemplate
+      <InputStartTemplate
         name="name"
         value={formData.name}
         onChange={handleChange}
@@ -38,7 +39,7 @@ export default function FormStartPage() {
         placeholder="Enter your name"
         type="text"
       />
-      <InputTemplate
+      <InputStartTemplate
         name="age"
         value={formData.age}
         onChange={handleChange}

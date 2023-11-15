@@ -54,6 +54,10 @@ export default function TableStartTemplate({
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-4 p-2">
+      <span className="pb-10">
+        Filename: <code>TableStartPage.tsx</code> &&{" "}
+        <code>TableStartTempalte.tsx</code>
+      </span>
       <table className="border-2 border-gray-900">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
