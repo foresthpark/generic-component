@@ -13,12 +13,12 @@ export default function VideoOnePage() {
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center">
-      <span className="text-4xl">
+      <span className="pt-10 text-4xl">
         {`And there is `}
         <s>Kevin</s> guys!
       </span>
 
-      <video ref={videoRef} controls autoPlay className="w-3/5 p-10">
+      <video ref={videoRef} controls autoPlay className="w-1/2 p-10">
         <source
           src="https://y.yarn.co/0579e415-8344-455b-bac7-8ce2b4673b25.mp4"
           type="video/mp4"

@@ -14,7 +14,7 @@ export default function VideoOnePage() {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center">
       <span className="text-4xl">{`There's gotta be a better way!`}</span>
-      <video ref={videoRef} controls autoPlay className="w-full p-10">
+      <video ref={videoRef} controls autoPlay className="w-3/5 p-10">
         <source
           src="https://y.yarn.co/ff9841cd-734e-4e06-944c-ff8cf86765bb.mp4"
           type="video/mp4"
