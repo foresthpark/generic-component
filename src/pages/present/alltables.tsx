@@ -8,7 +8,10 @@ export default function AllTablesPage() {
     <div className="flex h-screen flex-col items-center justify-start">
       <Table1Page simple />
       <Table2Page simple />
-      <Link href="/" className="text-2xl font-semibold leading-6 text-gray-900">
+      <Link
+        href="/present/video1"
+        className="text-2xl font-semibold leading-6 text-gray-900"
+      >
         Next <span aria-hidden="true">→</span>
       </Link>
     </div>

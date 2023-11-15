@@ -7,6 +7,9 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import Link from "next/link";
+import { boolean } from "zod";
+import { Props } from "next/script";
+
 type Person = {
   firstName: string;
   lastName: string;

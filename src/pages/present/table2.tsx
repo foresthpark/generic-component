@@ -7,64 +7,68 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import Link from "next/link";
-type Person = {
-  firstName: string;
-  lastName: string;
-  age: number;
-  visits: number;
+
+type Dessert = {
+  name: string;
+  calories: number;
+  sweetness: number;
+  popularity: number;
 };
 
-const defaultData: Person[] = [
+const defaultData: Dessert[] = [
   {
-    firstName: "tanner",
-    lastName: "linsley",
-    age: 24,
-    visits: 100,
+    name: "Frozen yoghurt",
+    calories: 159,
+    sweetness: 6,
+    popularity: 74,
   },
   {
-    firstName: "tandy",
-    lastName: "miller",
-    age: 40,
-    visits: 40,
+    name: "Apple Pie",
+    calories: 237,
+    sweetness: 8,
+    popularity: 98,
   },
   {
-    firstName: "joe",
-    lastName: "dirte",
-    age: 45,
-    visits: 20,
+    name: "Cupcake",
+    calories: 262,
+    sweetness: 16,
+    popularity: 39,
   },
 ];
 
-const columnHelper = createColumnHelper<Person>();
+const columnHelper = createColumnHelper<Dessert>();
 
 const columns = [
-  columnHelper.accessor("firstName", {
+  columnHelper.accessor("name", {
     cell: (info) => info.getValue(),
-    header: () => "First Name",
+    header: () => "Name",
     footer: (info) => info.column.id,
   }),
-  columnHelper.accessor((row) => row.lastName, {
-    id: "lastName",
+  columnHelper.accessor((row) => row.calories, {
+    id: "calories",
     cell: (info) => <i>{info.getValue()}</i>,
-    header: () => <span>Last Name</span>,
+    header: () => <span>Calories</span>,
     footer: (info) => info.column.id,
   }),
-  columnHelper.accessor("age", {
-    header: () => "Age",
-    cell: (info) => info.renderValue(),
+  columnHelper.accessor((row) => row.sweetness, {
+    id: "sweetness",
+    cell: (info) => <i>{info.getValue()}</i>,
+    header: () => <span>Sweetness</span>,
     footer: (info) => info.column.id,
   }),
-  columnHelper.accessor("visits", {
-    header: () => <span>Visits</span>,
+  columnHelper.accessor((row) => row.popularity, {
+    id: "popularity",
+    cell: (info) => <i>{info.getValue()}</i>,
+    header: () => <span>Popularity</span>,
     footer: (info) => info.column.id,
   }),
 ];
 
-interface PageProps {
+interface Table2PageProps {
   simple: boolean;
 }
 
-export default function Table1Page({ simple }: PageProps) {
+export default function Table2Page({ simple }: Table2PageProps) {
   const [data, setData] = React.useState(() => [...defaultData]);
   const table = useReactTable({
     data,
@@ -74,7 +78,7 @@ export default function Table1Page({ simple }: PageProps) {
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-4 p-2">
-      {!simple && <img src="/person.png" className="h-[300px]" />}
+      {!simple && <img src="/dessert.png" className="h-[300px]" />}
       <table className="border-2 border-gray-900">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -112,7 +116,7 @@ export default function Table1Page({ simple }: PageProps) {
       </table>
       {!simple && (
         <Link
-          href="/present/table2"
+          href="/present/alltables"
           className="text-2xl font-semibold leading-6 text-gray-900"
         >
           Next <span aria-hidden="true">→</span>
