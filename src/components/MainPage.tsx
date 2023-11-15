@@ -25,6 +25,9 @@ export default function MainPage() {
       <Link className="text-xs font-thin" href="/answers">
         Answers →
       </Link>
+      <Link className="text-xs font-thin" href="/present/start">
+        ← Back to begnning
+      </Link>
     </div>
   );
 }
