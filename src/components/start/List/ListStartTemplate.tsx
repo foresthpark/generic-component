@@ -5,7 +5,9 @@ import ListStartExample from "./ListStartExample";
 export default function ListStartTemplate() {
   return (
     <div className="flex h-screen flex-col items-center justify-center text-xl">
-      <span className="pb-3">Hello Sekai/世界/World/🌎</span>
+      <span className="pb-10">
+        Filename: <code>ListStartTemplate.tsx</code>
+      </span>
       <ul>
         {personData.map((name) => (
           <ListStartExample data={name} key={name.firstName} />

@@ -27,7 +27,11 @@ export default function InputStartPage() {
       onSubmit={handleSubmit}
       className="mx-auto flex w-full max-w-2xl flex-col justify-center gap-4 p-4"
     >
-      <InputStartTemplate<UserFormData>
+      <span className="pb-10">
+        Filename: <code>InputStartTemplate.tsx</code> &&{" "}
+        <code>start/input.tsx</code>
+      </span>
+      <InputStartTemplate
         name="name"
         value={formData.name}
         onChange={handleChange}
@@ -35,7 +39,7 @@ export default function InputStartPage() {
         placeholder="Enter your name"
         type="text"
       />
-      <InputStartTemplate<UserFormData>
+      <InputStartTemplate
         name="age"
         value={formData.age}
         onChange={handleChange}

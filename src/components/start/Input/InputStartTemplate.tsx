@@ -1,7 +1,7 @@
 import React from "react";
 
-interface InputFieldProps<T> {
-  name: keyof T;
+interface InputFieldProps {
+  name: string;
   value: string | number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   label: string;
@@ -9,26 +9,26 @@ interface InputFieldProps<T> {
   placeholder?: string;
 }
 
-export default function InputStartTemplate<T>({
+export default function InputStartTemplate({
   name,
   value,
   onChange,
   label,
   type,
   placeholder,
-}: InputFieldProps<T>) {
+}: InputFieldProps) {
   return (
     <div>
       <label
-        htmlFor={name.toString()}
+        htmlFor={name}
         className="block text-sm font-medium leading-6 text-gray-900"
       >
         {label}
       </label>
       <div className="mt-2">
         <input
-          id={name.toString()}
-          name={name.toString()}
+          id={name}
+          name={name}
           type={type}
           value={value}
           onChange={onChange}
