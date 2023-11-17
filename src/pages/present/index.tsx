@@ -6,7 +6,7 @@ const people = [
     role: "Chief Procrastination Officer",
     company: "Vizzn",
     imageUrl: "https://coffee.forestp.dev/images/image.png",
-    bio: `"I watch cat videos all day"`,
+    bio: `"I love building good products with good teams."`,
   },
   // More people...
 ];
@@ -22,7 +22,7 @@ export default function PresentationStart() {
               className="flex flex-col gap-10 pt-12 sm:flex-row"
             >
               <img
-                className="aspect-[4/5] max-w-xs flex-none rounded-2xl object-cover"
+                className="aspect-[4/5] max-w-lg flex-none rounded-2xl object-cover"
                 src={person.imageUrl}
                 alt=""
               />
@@ -30,11 +30,12 @@ export default function PresentationStart() {
                 <h3 className="text-4xl font-semibold leading-8 text-gray-900">
                   {person.name}
                 </h3>
-                <p className="text-base leading-7 text-gray-600">
-                  {person.role}
-                </p>
+                <p className="text-xl leading-7 text-gray-600">{person.role}</p>
                 <p className="text-base font-bold leading-7 text-gray-900">
                   {person.company}
+                </p>
+                <p className="mt-3 text-2xl font-semibold leading-7 text-gray-800">
+                  {person.bio}
                 </p>
                 <p className="mt-10 text-base leading-7 text-gray-600">
                   <Link
