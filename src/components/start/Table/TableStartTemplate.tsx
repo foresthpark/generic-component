@@ -26,22 +26,20 @@ export default function TableStartTemplate({
     columnHelper.accessor("firstName", {
       cell: (info) => info.getValue(),
       header: () => "First Name",
-      footer: (info) => info.column.id,
     }),
     columnHelper.accessor((row) => row.lastName, {
       id: "lastName",
       cell: (info) => <i>{info.getValue()}</i>,
       header: () => <span>Last Name</span>,
-      footer: (info) => info.column.id,
     }),
     columnHelper.accessor("age", {
+      id: 'age"',
       header: () => "Age",
       cell: (info) => info.renderValue(),
-      footer: (info) => info.column.id,
     }),
     columnHelper.accessor("visits", {
+      id: "visits",
       header: () => <span>Visits</span>,
-      footer: (info) => info.column.id,
     }),
   ];
 
