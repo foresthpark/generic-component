@@ -30,7 +30,7 @@ export default function TableStartTemplate({
     columnHelper.accessor((row) => row.lastName, {
       id: "lastName",
       cell: (info) => info.getValue(),
-      header: () => <span>Last Name</span>,
+      header: () => "Last Name",
     }),
     columnHelper.accessor("age", {
       id: 'age"',
@@ -39,7 +39,7 @@ export default function TableStartTemplate({
     }),
     columnHelper.accessor("visits", {
       id: "visits",
-      header: () => <span>Visits</span>,
+      header: () => "Visits",
     }),
   ];
 
