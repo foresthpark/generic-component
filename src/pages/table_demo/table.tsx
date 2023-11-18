@@ -71,6 +71,13 @@ type PersonKeyMap = {
   [P in keyof Person]: string;
 };
 
+type GenericKeyMap<T> = {
+  [P in keyof T]: string;
+};
+
+type GenericPersonKeyMap = GenericKeyMap<Person>;
+type GenericUserKeyMap = GenericKeyMap<User>;
+
 const personKeyMap: PersonKeyMap = {
   firstName: "First Name",
   lastName: "Last Name",
