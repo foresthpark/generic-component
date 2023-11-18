@@ -29,13 +29,13 @@ export default function TableStartTemplate({
     }),
     columnHelper.accessor((row) => row.lastName, {
       id: "lastName",
-      cell: (info) => <i>{info.getValue()}</i>,
+      cell: (info) => info.getValue(),
       header: () => <span>Last Name</span>,
     }),
     columnHelper.accessor("age", {
       id: 'age"',
       header: () => "Age",
-      cell: (info) => info.renderValue(),
+      cell: (info) => info.getValue(),
     }),
     columnHelper.accessor("visits", {
       id: "visits",
