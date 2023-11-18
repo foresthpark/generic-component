@@ -6,7 +6,7 @@ interface FormProps<T> {
   children: (
     values: T,
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  ) => JSX.Element;
+  ) => React.ReactNode;
 }
 
 export default function FormTemplate<T>({
