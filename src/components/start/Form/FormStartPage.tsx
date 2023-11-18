@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import InputTemplate from "~/components/InputTemplate";
+import FormStartTemplate from "./FormStartTemplate";
 
 type UserFormData = {
   name: string;
   age: number;
+  email: string;
 };
 
 export default function FormStartPage() {
-  const [formData, setFormData] = useState<UserFormData>({ name: "", age: 0 });
+  const [formData, setFormData] = useState<UserFormData>({
+    name: "",
+    age: 0,
+    email: "",
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+  const initialValues: UserFormData = { name: "", age: 0, email: "" };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,9 +23,9 @@ export default function FormStartPage() {
   };
 
   return (
-    <form
+    <FormStartTemplate<UserFormData>
       onSubmit={handleSubmit}
-      className="mx-auto flex w-full max-w-2xl flex-col justify-center gap-4 p-4"
+      initialValues={initialValues}
     >
       <span className="pb-10">
         Filename: <code>FormStartPage.tsx</code>
@@ -52,6 +52,6 @@ export default function FormStartPage() {
       >
         Submit! 🚀
       </button>
-    </form>
+    </FormStartTemplate>
   );
 }
