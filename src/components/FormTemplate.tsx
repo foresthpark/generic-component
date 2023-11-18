@@ -18,7 +18,13 @@ export default function FormTemplate<T>({
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setValues({ ...values, [name]: value } as T);
+    setValues(
+      (prev) =>
+        ({
+          ...prev,
+          [name]: value,
+        } as T)
+    );
   };
 
   const handleSubmit = (e: React.FormEvent) => {
