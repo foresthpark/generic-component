@@ -1,14 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function FormStartTemplate() {
+  const [values, setValues] = useState<T>(initialValues);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const [values, setValues] = useState<T>(initialValues);
-
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setValues({ ...values, [name]: value });
   };
 
   return (
